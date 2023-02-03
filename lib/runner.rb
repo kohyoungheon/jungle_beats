@@ -1,4 +1,6 @@
-require './lib/node'
-require './lib/linked_list'
+require './node'
+require './linked_list'
 
-linked_list = LinkedList.new
+list = LinkedList.new
+list.append("doop")
+require 'pry'; binding.pry
