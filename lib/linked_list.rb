@@ -6,7 +6,17 @@ class LinkedList
   end
 
   def append(data)
-    @head = Node.new(data)
+    new_node = Node.new(data)
+    if @head.nil?
+      @head = new_node
+    else
+      current_node = @head
+      while current_node.next_node != nil
+        current_node = current_node.next_node
+      end
+      #end of the list
+      current_node.next_node = new_node
+    end
   end
 
   def count
@@ -17,25 +27,34 @@ class LinkedList
       current_node = current_node.next_node
     end
     count
-    # if @head = nil
-    #   count = 0
-    # else
-    #   count = 1
-    #   current_node = @head
-    #   while current_node.next_node != nil
-    #     current_node = current_node.next_node
-    #     count += 1
-    #   end
-    # end
   end
 
   def to_string
     strings = ""
     current_node = @head
     while current_node
-      strings = strings << current_node.data
+      strings = strings << current_node.data + " "
       current_node = current_node.next_node
     end
-    return strings
+    return strings.strip
+  end
+
+  def insert(index,data)
+    current_node = @head
+    (index-1).times do
+      current_node = current_node.next_node
+    end
+    new_node = Node.new(data)
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+  end
+
+  def prepend(data)
+    if @head == nil
+      @head == Node.new(data)
+    else
+      old_head = @head
+      @head = Node.new(data, old_head)
+    end
   end
 end
