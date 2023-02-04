@@ -2,6 +2,8 @@ class JungleBeat
   attr_accessor :list
   def initialize
     @list = LinkedList.new
+    @rate = 100
+    @voice = "Daniel"
   end
 
   def append(beats)
@@ -28,11 +30,30 @@ class JungleBeat
 
   def play
     beats = @list.to_string
-    `say -r 500 -v Boing #{beats}`
+    `say -r #{@rate} -v #{@voice} #{beats}`
   end
 
   def all
     beats = @list.to_string
     puts beats
+  end
+
+  def prepend(beats)
+    beats_added=0
+    beats_array = beats.split(" ")
+    beats_array.each do |beat|
+      if ["tee","dee","deep","bop","boop","la","na"].include?(beat)
+        @list.prepend(beat)
+        beats_added += 1
+      end
+    end
+    puts beats_added.to_s << " beats added"
+  end
+  def reset_rate
+    @rate = 500
+  end
+
+  def reset_voice
+    @voice = "Boing"
   end
 end
