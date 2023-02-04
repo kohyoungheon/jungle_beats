@@ -32,7 +32,7 @@ class LinkedList
   def to_string
     strings = ""
     current_node = @head
-    while current_node
+    while current_node != nil
       strings = strings << current_node.data + " "
       current_node = current_node.next_node
     end

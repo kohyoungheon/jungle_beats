@@ -1,11 +1,7 @@
 require './node'
 require './linked_list'
+require "./jungle_beat"
 
-list = LinkedList.new
-list.append("plop")
-# list.append("suu")
-# list.prepend("dop")
-# list.to_string
-# list.count
-# list.insert(1, "woo")
+jb = JungleBeat.new
+jb.append("deep doo ditt")
 require 'pry'; binding.pry
