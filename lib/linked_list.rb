@@ -6,7 +6,7 @@ class LinkedList
   end
 
   def append(data)
-    new_node = Node.new(data)
+    new_node = Node.new(data) 
     if @head.nil?
       @head = new_node
     else
@@ -57,4 +57,18 @@ class LinkedList
       @head = Node.new(data, old_head)
     end
   end
+
+  def find (start_position,elements_to_return)
+    elements = []
+    current_node=@head
+    (start_position).times do
+      current_node = current_node.next_node
+    end
+    elements_to_return.times do
+      elements << current_node.data
+      current_node = current_node.next_node
+    end
+    elements
+  end
+
 end
