@@ -70,5 +70,15 @@ class LinkedList
     end
     elements
   end
+  def includes?(data)
+    current_node = @head
+    while current_node
+      if current_node.data == data
+        return true
+      end
+      current_node = current_node.next_node
+    end
+    false
+  end
 
 end
