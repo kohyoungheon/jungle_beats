@@ -10,6 +10,14 @@ class JungleBeat
     end
     @list
   end
-
-
+  def count
+    count = 0
+    current_node = @list.head
+    while current_node
+      count +=1
+      current_node = current_node.next_node
+      # require 'pry'; binding.pry
+    end
+    count
+  end
 end
