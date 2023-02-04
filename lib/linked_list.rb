@@ -81,10 +81,16 @@ class LinkedList
     false
   end
   def pop
+    if @head == nil
+      nil
+    end
     current_node = @head
-    until current_node == nil
+    previous_node = nil
+    while current_node.next_node
+      previous_node = current_node
       current_node = current_node.next_node
     end
-    current_node = nil
+    previous_node.next_node = nil
+    current_node.data
   end
 end
