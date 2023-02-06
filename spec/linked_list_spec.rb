@@ -31,5 +31,32 @@ describe LinkedList do
     end
   end
 
-  
+  describe  "#to_string" do
+    it "outputs the data values in the linked list into a string" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      expect(linked_list.to_string).to eq("doop deep")
+    end
+  end
+
+  describe "#insert" do
+    it "inserts a new node at a given index" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      linked_list.insert(1,"dip")
+      expect(linked_list.to_string).to eq ("doop dip deep")
+    end
+  end
+
+  describe "#prepend" do
+    it "adds a new node to the head of the linked list" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      linked_list.prepend("hip")
+      expect(linked_list.to_string).to eq ("hip doop deep")
+    end
+  end
 end
