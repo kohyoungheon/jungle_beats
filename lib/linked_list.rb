@@ -40,13 +40,23 @@ class LinkedList
   end
 
   def insert(index,data)
-    current_node = @head
-    (index-1).times do
-      current_node = current_node.next_node
+    linked_list_length = 0
+    length_check_start_node = @head
+    while length_check_start_node != nil
+      linked_list_length += 1
+      length_check_start_node = length_check_start_node.next_node
     end
-    new_node = Node.new(data)
-    new_node.next_node = current_node.next_node
-    current_node.next_node = new_node
+    if index > linked_list_length
+      puts "The list is only #{linked_list_length} nodes long."
+    else
+      current_node = @head
+      (index-1).times do
+        current_node = current_node.next_node
+      end
+      new_node = Node.new(data)
+      new_node.next_node = current_node.next_node
+      current_node.next_node = new_node
+    end
   end
 
   def prepend(data)
@@ -59,17 +69,31 @@ class LinkedList
   end
 
   def find (start_position,elements_to_return)
-    elements = []
-    current_node=@head
-    (start_position).times do
-      current_node = current_node.next_node
+    linked_list_length = 0
+    length_check_start_node = @head
+    while length_check_start_node != nil
+      linked_list_length += 1
+      length_check_start_node = length_check_start_node.next_node
     end
-    elements_to_return.times do
-      elements << current_node.data
-      current_node = current_node.next_node
+
+    if elements_to_return > linked_list_length
+      puts "The list is only #{linked_list_length} nodes long."
+    else
+      elements = []
+      current_node=@head
+      (start_position).times do
+        current_node = current_node.next_node
+      end
+      elements_to_return.times do
+        elements << current_node.data
+        current_node = current_node.next_node
+      end
+      elements
+
     end
-    elements
+
   end
+  
   def includes?(data)
     current_node = @head
     while current_node
@@ -80,6 +104,7 @@ class LinkedList
     end
     false
   end
+
   def pop
     if @head == nil
       nil

@@ -59,4 +59,36 @@ describe LinkedList do
       expect(linked_list.to_string).to eq ("hip doop deep")
     end
   end
+
+  describe "#find" do
+    it "finds the node at the given index and returns the number of elements after" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      linked_list.append("beep")
+      expect(linked_list.find(1,2)).to eq (["deep", "beep"])
+    end
+  end
+
+  describe "#includes" do
+    it "checks whether the given string exists in the linked list" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      linked_list.append("beep")
+      expect(linked_list.includes?("doop")).to eq (true)
+      expect(linked_list.includes?("bop")).to eq (false)
+    end
+  end
+
+  describe "#pop" do
+    it "removes the last node from the linked list" do
+      linked_list = LinkedList.new
+      linked_list.append("doop")
+      linked_list.append("deep")
+      linked_list.append("beep")
+      expect(linked_list.pop).to eq ("beep")
+      expect(linked_list.to_string).to eq ("doop deep")
+    end
+  end
 end

@@ -15,7 +15,8 @@ class JungleBeat
         beats_added += 1
       end
     end
-    puts beats_added.to_s << " beats added"
+    beats_added
+    # puts beats_added.to_s << " beats added"
   end
 
   def count
@@ -49,7 +50,8 @@ class JungleBeat
         beats_added += 1
       end
     end
-    puts beats_added.to_s << " beats added"
+    beats_added
+    # puts beats_added.to_s << " beats added"
   end
   def reset_rate
     @rate = 500
