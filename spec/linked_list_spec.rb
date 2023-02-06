@@ -17,8 +17,8 @@ describe LinkedList do
     it "appends a node to the end of the linked list" do
       linked_list = LinkedList.new
       linked_list.append("beep")
-      node = Node.new("beep")
-      expect(linked_list.head).to eq(node)
+      # node = Node.new("beep")
+      expect(linked_list.head.data).to eq("beep")
     end
   end
 
@@ -30,4 +30,6 @@ describe LinkedList do
       expect(linked_list.count).to eq(2)
     end
   end
+
+  
 end

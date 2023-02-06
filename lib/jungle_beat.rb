@@ -2,7 +2,7 @@ class JungleBeat
   attr_accessor :list
   def initialize
     @list = LinkedList.new
-    @rate = 100
+    @rate = 200
     @voice = "Daniel"
   end
 
@@ -31,6 +31,8 @@ class JungleBeat
   def play
     beats = @list.to_string
     `say -r #{@rate} -v #{@voice} #{beats}`
+    beat_array = beats.split("")
+    return beat_array.length
   end
 
   def all

@@ -11,5 +11,9 @@ describe Node do
       node_1 = Node.new("plop")
       expect(node_1.data). to eq ("plop")
     end
+    it "has a next_node attribute" do
+      node_1 = Node.new("plop")
+      expect(node_1.next_node). to eq (nil)
+    end
   end
 end

@@ -3,9 +3,9 @@ require './linked_list'
 require "./jungle_beat"
 
 jb = JungleBeat.new
-jb.append("tee tee")
+jb.append("tee tee tee tee")
 jb.append("Mississippi")
-jb.prepend("tee dee deep")
+jb.prepend("deep deep deep deep")
 jb.all
 # jb.reset_voice
 # jb.reset_rate
