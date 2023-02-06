@@ -38,4 +38,23 @@ describe JungleBeat do
       expect(jb.all).to eq("tee dee deep bop boop")
     end
   end
+  describe "#prepend" do
+    it "prepends only valid beats to the linked list" do
+      jb = JungleBeat.new
+      expect(jb.prepend("tee dee")).to eq(2)
+      expect(jb.prepend("Mississippi")).to eq(0)
+    end
+  end
+  describe "#reset_rate" do
+    it "resets the rate of the voice to 500" do
+      jb = JungleBeat.new
+      expect(jb.reset_rate).to eq (500)
+    end
+  end
+  describe "#reset_voice" do
+    it "resets the voice to Boing" do
+      jb=JungleBeat.new
+      expect(jb.reset_voice).to eq("Boing")
+    end
+  end
 end

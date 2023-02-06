@@ -47,6 +47,7 @@ describe LinkedList do
       linked_list.append("deep")
       linked_list.insert(1,"dip")
       expect(linked_list.to_string).to eq ("doop dip deep")
+      expect(linked_list.insert(10,"boop")).to eq ("The list is only 3 nodes long.")
     end
   end
 
@@ -67,6 +68,7 @@ describe LinkedList do
       linked_list.append("deep")
       linked_list.append("beep")
       expect(linked_list.find(1,2)).to eq (["deep", "beep"])
+      expect(linked_list.find(1,10)).to eq ("The list is only 3 nodes long.")
     end
   end
 

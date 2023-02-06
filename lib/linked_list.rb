@@ -47,7 +47,7 @@ class LinkedList
       length_check_start_node = length_check_start_node.next_node
     end
     if index > linked_list_length
-      puts "The list is only #{linked_list_length} nodes long."
+      return "The list is only #{linked_list_length} nodes long."
     else
       current_node = @head
       (index-1).times do
@@ -77,7 +77,7 @@ class LinkedList
     end
 
     if elements_to_return > linked_list_length
-      puts "The list is only #{linked_list_length} nodes long."
+      return "The list is only #{linked_list_length} nodes long."
     else
       elements = []
       current_node=@head
