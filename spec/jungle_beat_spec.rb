@@ -11,7 +11,7 @@ describe JungleBeat do
     end
   end
   describe "#append" do
-    it "appends only valid beats to the linked list" do
+    it "appends only valid beats to the linked list and returns the number of beats appended" do
       jb = JungleBeat.new
       expect(jb.append("Mississippi")).to eq(0)
       expect(jb.append("tee dee deep")).to eq(3)
@@ -39,7 +39,7 @@ describe JungleBeat do
     end
   end
   describe "#prepend" do
-    it "prepends only valid beats to the linked list" do
+    it "prepends only valid beats to the linked list and returns number of beats prepended" do
       jb = JungleBeat.new
       expect(jb.prepend("tee dee")).to eq(2)
       expect(jb.prepend("Mississippi")).to eq(0)
