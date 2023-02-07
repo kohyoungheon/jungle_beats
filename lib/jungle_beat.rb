@@ -53,6 +53,7 @@ class JungleBeat
     beats_added
     # puts beats_added.to_s << " beats added"
   end
+  
   def reset_rate
     @rate = 500
   end
